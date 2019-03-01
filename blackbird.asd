@@ -3,7 +3,7 @@
   :license "MIT"
   :version "0.5.2"
   :description "A promise implementation for Common Lisp."
-  :depends-on (#:vom)
+  :depends-on (#:vom #:dissect)
   :components
   ((:file "package")
    (:file "syntax" :depends-on ("package"))

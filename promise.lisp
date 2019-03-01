@@ -57,8 +57,9 @@
          (handler-bind
              ((error (lambda (e)
                        (setf ,last-err e)
+                       (let ((env (dissect:capture-environment e) ))
                        (unless *debug-on-error*
-                         (funcall ,error-fn e)))))
+                         (funcall ,error-fn env))))))
            (restart-case
              (progn ,@body)
              (reject-promise ()
